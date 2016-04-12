@@ -7,7 +7,7 @@ var bands = ["Boyz II Men", "NSync", "New Kids on the Block", "98 Degrees", "One
 var vegetables = ["Carrots", "Kale", "Zucchini", "Broccoli", "Squash"];
 
 // The number of loops to perform (what if the array changes?)
-var loopCount = bands.length;
+var loopCount = bands.length > vegetables.length ? bands.length : vegetables.length;
 
 // Keep track of which band we're on in the loop
 var currentBand = "";
@@ -24,12 +24,13 @@ var veggieElement = document.getElementById("vegetables");
 // Start looping
 for (var loopTracker = 0; loopTracker < loopCount; loopTracker += 1) {
 
+  if (currentBand !== undefined) {
   // Add the band names into the correct <div>
-
   currentBand += bandElement.innerHTML += "<div>" + bands[ loopTracker ] + "</div>";
+  }
 
-
+  if (currentVeggie !== undefined) {
   // Add the veggie names into the correct <div>
   currentVeggie += veggieElement.innerHTML += "<div>" + vegetables[ loopTracker ] + "</div>";
-
+  }
 }
